@@ -28,7 +28,7 @@ module.exports = {
         filename: 'bundle.[hash].js',
         path: path.resolve(__dirname, './build'),
         publicPath: '',
-        chunkFilename: "chunk.[name].[chunkhash].js" // 对于按需加载的模块，都不会写在entry入口文件中，chunkFilename是给这些按需加载模块的命名规则
+        // chunkFilename: "chunk.[name].[chunkhash].js" // 对于按需加载的模块，都不会写在entry入口文件中，chunkFilename是给这些按需加载模块的命名规则
     },
     context: __dirname,
     module: {
@@ -64,6 +64,8 @@ module.exports = {
                 }, {
                     loader: 'postcss-loader',
                     options: _postCss
+                }, {
+                    loader: 'less-loader'
                 }
             ] }) : [
                 {
@@ -88,9 +90,9 @@ module.exports = {
                 }
             ]
         }, {
-            test: /\.(jpg|png)$/,
+            test: /\.(jpg|png)$/, // 处理.png和.jpg格式的图片文件
             use: [
-                'url-loader?limit=10000&name=img/[name].[ext]'
+                'url-loader?limit=10000&name=img/[name].[ext]' // limit参数指图片大小的最大值，当小于这个值时图片转为base64，name参数指图片文件的命名格式，前面可以加 img/ 表示图片存储路径
             ]
         }, {
             test: /\.html$/,
@@ -123,8 +125,9 @@ module.exports = {
             'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
         new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
             compress: {
-                warnings: true
+                warnings: false
             }
         }),
         // CommonsChunkPlugin可以让我们在几个模块之间抽取出公共部分内容，并且把他们添加到公共的打包模块中
@@ -162,7 +165,7 @@ module.exports = {
     },
     devtool: 'source-map',
     resolve: {
-        extensions: ['.js', '.scss', '.html', '.jsx'],
+        extensions: ['.js', '.less', '.html', '.jsx'],
         alias: {
             'jquery': 'jquery/dist/jquery.min.js',
             'bootCss': 'bootstrap/dist/css/bootstrap.css',

@@ -1,0 +1,21 @@
+@import '../../libs/mixin.less';
+
+.siderbar-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(1, 1, 1, .2);
+    transition: left .2s ease-in-out;
+    .siderbar-main {
+        background: white;
+        width: 70%;
+        height: 100%;
+    }
+}
+.expand {
+    left: 0;
+}
+.unexpand {
+    left: -100%;
+}
