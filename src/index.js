@@ -19,3 +19,7 @@ ReactDOM.render(
 )
 
 
+/**
+ * react-router会将props之类的属性直接注入组件 实现路由跳转。。。
+ * 
+ */
