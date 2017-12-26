@@ -1,0 +1,28 @@
+@import '../../libs/mixin.less';
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+.online-wrapper {
+    .second-nav {
+        .px2rem(height, 80);
+        .px2rem(line-height, 80);
+        .px2rem(padding-left, 40);
+        .px2rem(padding-right, 40);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background: white;
+        .px2rem(font-size, 34);
+        .second-nav-item {
+            flex: .2;
+            text-align: center;
+            // color: #333;
+        }
+    }
+    .second-active {
+        color: #C20C0C !important;
+        border-bottom: 2px solid #C20C0C;
+    }
+}

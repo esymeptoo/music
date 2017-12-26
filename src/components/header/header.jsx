@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styles from  './index.less'
+import './index.less'
 
 export default class Header extends Component {
     shouldComponentUpdate (nextProps, nextState) {
@@ -15,20 +15,17 @@ export default class Header extends Component {
                 <div className="first-nav">
                     <img src={require('../../assets/list.png')} alt="" className="list-icon" onClick={() => {this.props.handleSiderBarShow(true)}}/>
                     <div className="middle-menu">
-                        <a href="#/index">
-                            <img src={this.props.currentRouter == '/index'? require("../../assets/music_light.png"): require("../../assets/music_dark.png")} alt=""/>
+                        <a href="#/local">
+                            <img src={this.props.currentRouter.indexOf('/local') > -1? require("../../assets/music_light.png"): require("../../assets/music_dark.png")} alt=""/>
                         </a>
                         <a href="#/music">
-                            <img src={this.props.currentRouter == '/music'? require("../../assets/header2_light.png"): require("../../assets/header2_dark.png")} alt=""/>
+                            <img src={this.props.currentRouter.indexOf('/music') > -1? require("../../assets/header2_light.png"): require("../../assets/header2_dark.png")} alt=""/>
                         </a>
                         <a href="#/group">
-                            <img src={this.props.currentRouter == '/group'? require("../../assets/group_light.png"): require("../../assets/group_dark.png")} alt=""/>
+                            <img src={this.props.currentRouter.indexOf('/group') > -1? require("../../assets/group_light.png"): require("../../assets/group_dark.png")} alt=""/>
                         </a>
                     </div>
                     <img src={require("../../assets/search.png")} alt="" className="search-icon"/>
-                </div>
-                <div className="second-nav">
-
                 </div>
             </div>
         )
