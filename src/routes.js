@@ -1,6 +1,6 @@
 import React from 'react'
-import { Router, Route, Link, hashHistory, IndexRedirect, IndexRoute, browserHistory } from 'react-router'
-import App from './containers/App.jsx'
+import { Router, Route, Link, hashHistory, IndexRedirect, IndexRoute, browserHistory } from 'react-router-dom'
+import App from './containers/App'
 import Index from './containers/Index.jsx'
 import Local from './components/local/local.jsx'
 import Online from './components/online/online.jsx'

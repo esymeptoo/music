@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import '../libs/mixin'
-import '../libs/styles'
+import '../libs/mixin.less'
+import '../libs/styles.less'
 
 export default class App extends React.Component {
     constructor(props) {

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import routes from './routes'
-import { Router, hashHistory } from 'react-router'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import App from './containers/App.jsx'
 
@@ -11,10 +11,9 @@ import App from './containers/App.jsx'
 // const store = configureStore();
 
 ReactDOM.render(
-    <Router history={hashHistory}>
+    <BrowserRouter>
         {routes}
-    </Router>
-    // <App/>
+    </BrowserRouter>
     , document.getElementById('root')
 )
 
