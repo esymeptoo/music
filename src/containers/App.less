@@ -1,0 +1,54 @@
+@import '../libs/mixin.less';
+
+.bottom-play-wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    .px2rem(height, 110);
+    display: flex;
+    align-items: center;
+    .px2rem(padding-left, 30);
+    .px2rem(padding-right, 30);
+    .px2rem(padding-top, 20);
+    .px2rem(padding-bottom, 20);
+    .cover {
+        .px2rem(width, 100);
+    }
+    .play-data {
+        flex: 1;
+        .px2rem(margin-left, 20);
+        .song-name {
+            .px2rem(font-size, 30);
+        }
+        .song-author {
+            .px2rem(font-size, 22);
+        }
+    }
+    .controll-box {
+        .px2rem(width, 120);
+        i {
+            display: inline-block;
+        }
+        .controll-btn {
+            .px2rem(width, 50);
+            .px2rem(height, 50);
+            background-image: url('../assets/play.png');
+            background-position: 0 center;
+            background-repeat: no-repeat;
+            .px2rem(background-size, 50);
+        }
+        .list-btn {
+            .px2rem(width, 50);
+            .px2rem(height, 50);
+            background-image: url('../assets/bottom-list.png');
+            background-position: 0 center;
+            background-repeat: no-repeat;
+            .px2rem(background-size, 50);
+            float: right;
+        }
+    }
+    audio {
+        display: none;
+    }
+}
