@@ -12,22 +12,53 @@ import OnlineRadio from './components/content/radio.jsx'
 //匹配规则参考官方文档
 // 此处为多级路由
 export default (
-  <Route path="/" component={App}>
-    <IndexRedirect to="/local" />
+  <App>
+    <Route path="/local" component={Local} />
+    <Route path="/music" component={Online} />
+    <Route path="/group" component={Local} />
+  </App>
+  // <Route path="/" component={App}>
+  //   <IndexRedirect to="/local" />
 
-    <Route path="/" component={Index}> 
-      {/* 本地音乐 */}
-      <Route path="/local" component={Local}/>
-      {/* 乐库 */}
-      <Route path="/music" component={Online}>
-        <IndexRedirect to="/music/index" />
-        <Route path="/music/index" component={OnlineMusic} />
-        <Route path="/music/video" component={OnlineVideo} />
-        <Route path="/music/radio" component={OnlineRadio} />
-      </Route>
-      {/* 话题 */}
-      <Route path="/group" component={Local}/>
-    </Route>
+  //   <Route path="/" component={Index}> 
 
-  </Route>
+  //     <Route path="/local" component={Local}/>
+
+  //     <Route path="/music" component={Online}>
+  //       <IndexRedirect to="/music/index" />
+  //       <Route path="/music/index" component={OnlineMusic} />
+  //       <Route path="/music/video" component={OnlineVideo} />
+  //       <Route path="/music/radio" component={OnlineRadio} />
+  //     </Route>
+
+  //     <Route path="/group" component={Local}/>
+  //   </Route>
+
+  // </Route>
 )
+
+//  let routes = [
+//   {
+//     path: '/',
+//     component: Index,
+//     routes: [
+//       {
+//         path: '/music',
+//         component: Online
+//       }, {
+//         path: '/local',
+//         component: Local
+//       }, {
+//         path: '/group',
+//         component: Local
+//       }
+//     ]
+//   }
+// ]
+
+// const RouteWithSubRoutes = (route) => (
+//   <Route path={route.path} render={props => (
+//     // pass the sub-routes down to keep nesting
+//     <route.component {...props} routes={route.routes}/>
+//   )}/>
+// )

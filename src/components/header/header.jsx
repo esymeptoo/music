@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './index.less'
 
 export default class Header extends Component {
@@ -15,15 +16,15 @@ export default class Header extends Component {
                 <div className="first-nav">
                     <img src={require('../../assets/list.png')} alt="" className="list-icon" onClick={() => {this.props.handleSiderBarShow(true)}}/>
                     <div className="middle-menu">
-                        <a href="#/local">
+                        <Link to="/local">
                             <img src={this.props.currentRouter.indexOf('/local') > -1? require("../../assets/music_light.png"): require("../../assets/music_dark.png")} alt=""/>
-                        </a>
-                        <a href="#/music">
+                        </Link>
+                        <Link to="/music">
                             <img src={this.props.currentRouter.indexOf('/music') > -1? require("../../assets/header2_light.png"): require("../../assets/header2_dark.png")} alt=""/>
-                        </a>
-                        <a href="#/group">
+                        </Link>
+                        <Link to="/group">
                             <img src={this.props.currentRouter.indexOf('/group') > -1? require("../../assets/group_light.png"): require("../../assets/group_dark.png")} alt=""/>
-                        </a>
+                        </Link>
                     </div>
                     <img src={require("../../assets/search.png")} alt="" className="search-icon"/>
                 </div>
